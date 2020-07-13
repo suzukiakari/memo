@@ -38,31 +38,11 @@ public class Memo extends AppCompatActivity {
 
         //リストビューのメモリストのためのMAP配列準備
         list = new ArrayList<>();
-        //Map<String, Object> memoList;
         //データベースの準備
         DatabaseHelper helper = new DatabaseHelper(Memo.this);
-        DeleteMemo memo = new DeleteMemo();
+        sqlMemo memo = new sqlMemo();
         list = memo.select(helper);
-       /* SQLiteDatabase db = helper.getWritableDatabase();
-        //sql
-        try {
-            String sql = "SELECT * FROM memodata";
-            Cursor cursor = db.rawQuery(sql, null);
-            while(cursor.moveToNext()) {
-                int id = cursor.getInt(0);
-                String memo = cursor.getString(1);
-                String image = cursor.getString(2);
-                String date = cursor.getString(3);
-                memoList = new HashMap<>();
-                memoList.put("id", id);
-                memoList.put("memo", memo);
-                memoList.put("image", image);
-                memoList.put("date", date);
-                list.add(memoList);
-            }
-        } finally {
-            db.close();
-        }*/
+
         String[] from = {"memo"};
         int[] to = {android.R.id.text1};
         SimpleAdapter adapter = new SimpleAdapter(Memo.this, list,
@@ -79,7 +59,6 @@ public class Memo extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
-
     private class ListItemClickListener implements AdapterView.OnItemClickListener {
         @Override
         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {

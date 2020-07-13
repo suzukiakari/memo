@@ -4,10 +4,18 @@
     <string name="new_memo_list">新規メモ</string>
     <string name="memo_list">メモリスト</string>
     <string name="new_memo_bt">メモを登録</string>
-    <string name="dialog_empty">メモを入力してください。</string>
+    <string name="dialog_empty">メモを入力してください</string>
     <string name="dialog_new_memo">登録をしました</string>
-    <string name="dialog_new_memo_ok">OK</string>
-    <string name="chooseDate">日付を指定</string>
+    <string name="dialog_memo_ok">OK</string>
+    <string name="chooseDate">日付指定</string>
+    <string name="chooseTime">時間指定</string>
+    <string name="chooseAlert">通知</string>
+    <string name="delete_dialog">削除しました</string>
+    <string name="edit_dialog">修正しました</string>
+    <string name="edit_memo_switch">変更</string>
+    <string name="ng_dialog">保存に失敗しました。</string>
+    <string name="notification_alert_title">Memoアプリ通知</string>
+    <string name="notification_alert_text">日付指定されたメモがあります。</string>
     <string-array name="Month">
         <item>01</item>
         <item>02</item>

@@ -1,6 +1,7 @@
 package com.example.memo;
 
 import android.database.Cursor;
+import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteStatement;
 
@@ -9,7 +10,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class DeleteMemo {
+public class sqlMemo {
     List<Map<String, Object>> list = new ArrayList<>();
     Map<String, Object> memoList;
 
@@ -45,8 +46,31 @@ public class DeleteMemo {
             SQLiteStatement stmt = db.compileStatement(sql);
             stmt.bindLong(1, id);
             stmt.executeUpdateDelete();
-        }finally{
+        } finally {
             db.close();
         }
+    }
+
+    public boolean upDate(DatabaseHelper helper, int id, String[] memoData) {
+        SQLiteDatabase db = helper.getWritableDatabase();
+        try {
+            String deleteSql = "DELETE FROM memodata WHERE id=?";
+            SQLiteStatement stmt = db.compileStatement(deleteSql);
+            stmt.bindLong(1, id);
+            stmt.executeUpdateDelete();
+            String insertSql = "INSERT INTO memodata (id, text, image, date) VALUES(?,?,?,?)";
+            stmt = db.compileStatement(insertSql);
+            stmt.bindLong(1, id);
+            stmt.bindString(2, memoData[0]);
+            stmt.bindString(3, "null");
+            stmt.bindString(4, "null");
+            stmt.executeInsert();
+        } catch(SQLException e) {
+            e.printStackTrace();
+            return false;
+        } finally {
+            db.close();
+        }
+        return true;
     }
 }

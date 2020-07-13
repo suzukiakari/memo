@@ -21,7 +21,7 @@ public class NewMemoDialog extends DialogFragment {
         } else {
             builder.setMessage(R.string.dialog_new_memo);
         }
-        builder.setPositiveButton(R.string.dialog_new_memo_ok, new DialogButtonClickListener());
+        builder.setPositiveButton(R.string.dialog_memo_ok, new DialogButtonClickListener());
         AlertDialog dialog = builder.create();
         return dialog;
     }

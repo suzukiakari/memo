@@ -7,4 +7,16 @@
         android:orderInCategory="100"
         app:showAsAction="ifRoom"
         android:title="削除" />
+    <item
+        android:id="@+id/edit"
+        android:icon="@drawable/ic_action_edit"
+        android:orderInCategory="100"
+        app:showAsAction="ifRoom"
+        android:title="修正" />
+    <item
+        android:id="@+id/save"
+        android:icon="@drawable/ic_action_attach"
+        android:orderInCategory="100"
+        app:showAsAction="ifRoom"
+        android:title="保存" />
 </menu>

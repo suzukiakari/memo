@@ -1,66 +1,89 @@
 <?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:isScrollContainer="false">
 <LinearLayout
-xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
+
     <EditText
         android:id="@+id/new_memo_input"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="400dp"
         android:layout_weight="0.4"
         android:gravity="top"
         android:inputType="textMultiLine" />
-    <CheckBox
-        android:id="@+id/doDate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background = "#ffffff"
-        android:textSize="20sp"
-        android:text="@string/chooseDate" />
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:paddingRight="90dp"
+        android:paddingLeft="90dp"
+        android:paddingTop="25dp"
         android:orientation="horizontal">
-        <Spinner
-            android:id="@+id/month"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:background="#999"
-            android:layout_weight="0.3"
-            android:padding="20dp"
-            android:entries="@array/Month" />
-        <TextView
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="60dp"
+        android:textSize="25sp"
+        android:text="@string/chooseDate"/>
+        <Switch
+            android:id="@+id/doDate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
-            android:text="月"/>
-        <Spinner
-            android:id="@+id/date"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:background="#999"
-            android:layout_weight="0.3"
-            android:padding="20dp"
-            android:entries="@array/date" />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="20sp"
-            android:text="日" />
+            android:textSize="20sp"/>
     </LinearLayout>
-    <Button
-        android:id="@+id/new_memo_button"
+    <CalendarView
+        android:id="@+id/calender"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="20dp"
-        android:paddingBottom="20dp"
-        android:layout_marginLeft="100dp"
-        android:layout_marginRight="100dp"
-        android:layout_marginTop="50dp"
+        android:paddingRight="90dp"
+        android:paddingLeft="90dp"
+        android:paddingTop="25dp"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="60dp"
+            android:textSize="25sp"
+            android:text="@string/chooseTime"/>
+        <Switch
+            android:id="@+id/doTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"/>
+    </LinearLayout>
+    <TimePicker
+        android:id="@+id/timePicker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:timePickerMode="spinner"
+        android:layout_marginRight="70dp"
+        android:layout_marginLeft="70dp"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingRight="90dp"
+        android:paddingLeft="90dp"
+        android:paddingTop="25dp"
         android:layout_marginBottom="50dp"
-        android:background="#cc6666"
-        android:textSize="20dp"
-        android:onClick="onNewMemoClick"
-        android:text="@string/new_memo_bt" />
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="135dp"
+            android:textSize="25sp"
+            android:text="@string/chooseAlert"/>
+        <Switch
+            android:id="@+id/doAlert"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"/>
+    </LinearLayout>
 </LinearLayout>
+</ScrollView>
